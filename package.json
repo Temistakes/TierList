@@ -45,5 +45,9 @@
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"description": ""
+	"description": "",
+	"dependencies": {
+		"fslightbox": "^3.4.2",
+		"swiper": "^11.2.0"
+	}
 }
