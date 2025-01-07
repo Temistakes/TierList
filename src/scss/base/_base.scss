@@ -23,6 +23,9 @@ body {
 .main {
     min-height: 100vh;
     background: $gray1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 svg, img, video {
@@ -47,7 +50,7 @@ svg, img, video {
 a, button {
     color: inherit;
     background: none;
-    transition: .5s;
+    transition: .3s;
 }
 
 a:hover, button:hover {

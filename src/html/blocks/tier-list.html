@@ -1,7 +1,18 @@
 <section class="tier-list">
-    <div class="container">
 
-        
+    @@include("./tier-list-header.html")
 
+    <div class="tier-list__rows">
+        <div class="tier-list__rows-wrap">
+            @@include("./tier-list-row.html", {symbol: "s", color: "#e16161"})
+            @@include("./tier-list-row.html", {symbol: "a", color: "#e1a161"})
+            @@include("./tier-list-row.html", {symbol: "b", color: "#e1c861"})
+            @@include("./tier-list-row.html", {symbol: "c", color: "#dde161"})
+            @@include("./tier-list-row.html", {symbol: "d", color: "#7ae161"})
+        </div>
     </div>
+
+    @@include("./tier-list-footer.html")
+
 </section>
+

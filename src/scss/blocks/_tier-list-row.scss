@@ -1,0 +1,45 @@
+.row {
+    height: $rowHeight;
+    width: 100%;
+    display: flex;
+
+    &__symbol {
+        width: 6.25rem;
+        min-width: 6.25rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #7ae161;
+    }
+
+    &__symbol-text {
+        color: $black;
+        font-size: 1.25rem;
+        font-weight: $normal;
+    }
+
+    &__items {
+        width: 100%;
+    }
+
+    &__managment {
+        height: 100%;
+        min-width: 5rem;
+        background: $black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    &__arrows {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+    }
+
+    &__arrow-btn {
+        transform: scale(1.2);
+    }
+}
