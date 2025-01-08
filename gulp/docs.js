@@ -71,11 +71,11 @@ gulp.task('sass:docs', function () {
 		.pipe(changed('./docs/css/'))
 		.pipe(plumber(plumberNotify('SCSS')))
 		.pipe(sourceMaps.init())
-		.pipe(autoprefixer())
 		.pipe(sassGlob())
+		.pipe(sass())
 		.pipe(webpCss())
 		.pipe(groupMedia())
-		.pipe(sass())
+		.pipe(autoprefixer())
 		.pipe(csso())
 		.pipe(sourceMaps.write())
 		.pipe(gulp.dest('./docs/css/'));
