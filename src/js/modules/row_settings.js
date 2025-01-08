@@ -105,11 +105,11 @@ export function setSettings(element) {
         }
 
         $("#tier-modal .tier-modal__btn").off("click", buttonsListener);
+        $("#tier-modal .tier-modal__color-item").removeClass("tier-modal__color-item_active");
+        $(document).off("closing", "#tier-modal", end);
     }
 
-    $(document).on("closing", "#tier-modal", () => {
-        end();
-    });
+    $(document).on("closing", "#tier-modal", end);
 
     $("#tier-modal .tier-modal__btn").on("click", buttonsListener);
 }

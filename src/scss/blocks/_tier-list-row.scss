@@ -1,13 +1,12 @@
 .row {
-    height: $rowHeight;
+    min-height: $rowHeight;
     width: 100%;
     display: flex;
     overflow: hidden;
 
     &__symbol {
         width: 6.25rem;
-        min-width: 6.25rem;
-        height: 100%;
+        min-height: $rowHeight;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -21,10 +20,12 @@
 
     &__items {
         width: 100%;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     &__managment {
-        height: 100%;
+        min-height: $rowHeight;
         min-width: 5rem;
         background: $black;
         display: flex;
