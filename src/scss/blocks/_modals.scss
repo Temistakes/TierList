@@ -1,0 +1,93 @@
+.tier-modal {
+    width: 100%;
+
+    .iziModal-content {
+        padding: 1rem !important;
+    }
+
+    &__colors {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    &__color-item {
+        display: flex;
+
+        &_input {
+            padding-left: 0.5rem;
+            align-items: center;
+            gap: 0.25rem;
+        }
+    }
+
+    &__color-btn {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    &__color-input {
+        height: 2.5rem;
+        width: 2.25rem;
+        padding: 0;
+    }
+
+    &__color-label {
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 0.0625rem solid $black;
+        transition: .3s;
+
+        svg {
+            transition: .3s;
+        }
+
+        &:hover {
+            background: $black;
+            box-shadow: 0 0 0.625rem $shadow1;
+            opacity: 1;
+
+            svg {
+                fill: $white;
+            }
+        }
+    }
+
+    &__buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    &__btn {
+        text-transform: uppercase;
+        border: 0.0625rem solid $black;
+        padding: 0.5rem;
+
+        &:hover {
+            opacity: 1;
+            background: $black;
+            color: $white;
+            box-shadow: 0 0 0.625rem $shadow1;
+        }
+    }
+
+    &__color-item_active &__color-btn {
+        opacity: 0.5;
+    }
+
+    &__color-item_input.tier-modal__color-item_active &__color-label {
+        background: $black;
+        box-shadow: 0 0 0.625rem $shadow1;
+
+        svg {
+            fill: $white;
+        }
+    }
+}

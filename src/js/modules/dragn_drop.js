@@ -14,6 +14,9 @@ export function mousedown(event, height) {
     let shiftY = event.clientY - event.currentTarget.getBoundingClientRect().top;
 
     let copy = element.clone();
+
+    copy.css("opacity", "0.3");
+    element.after(copy);
     
     $(document.body).append(element);
     element.css({
@@ -21,9 +24,6 @@ export function mousedown(event, height) {
         height: height + "px",
         zIndex: 1000,
     });
-
-    copy.css("opacity", "0.3");
-    $(currentParrent).append(copy);
 
     movedElement(event);
 
@@ -51,7 +51,7 @@ export function mousedown(event, height) {
 
     $(document.documentElement).on("mousemove", movedElement);
 
-    $(document.documentElement).on("mouseup", (event) => {
+    $(document.documentElement).on("mouseup", () => {
         $(document.documentElement).off("mousemove", movedElement);
         $(currentParrent).append(element);
         element.css("position", "static");

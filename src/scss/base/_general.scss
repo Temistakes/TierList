@@ -76,6 +76,14 @@
 
 		svg {
 			transform: scale(1.2);
+			transition: .3s;
+		}
+
+		&_active {
+
+			svg {
+				transform: scale(1.2) rotate(-180deg);
+			}
 		}
     }
 
@@ -95,6 +103,33 @@
 	&:hover {
 		opacity: 1;
 	}
+}
+
+.rename-input {
+	border-bottom: 0.0625rem solid $white;
+	padding-bottom: 0.4rem;
+	text-transform: uppercase;
+	text-align: center;
+
+	&_black {
+		border-color: $black;
+		color: $black;
+
+		&::placeholder {
+			color: $black;
+		}
+	}
+}
+
+.rename {
+	display: inline;
+}
+
+.rename-wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 // Drop Downs

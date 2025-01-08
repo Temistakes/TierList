@@ -2,6 +2,7 @@
     height: $rowHeight;
     width: 100%;
     display: flex;
+    overflow: hidden;
 
     &__symbol {
         width: 6.25rem;
@@ -10,7 +11,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #7ae161;
     }
 
     &__symbol-text {

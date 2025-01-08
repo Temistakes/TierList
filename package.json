@@ -48,6 +48,7 @@
 	"description": "",
 	"dependencies": {
 		"fslightbox": "^3.4.2",
+		"izimodal": "^1.6.1",
 		"jquery": "^3.7.1",
 		"swiper": "^11.2.0"
 	}
