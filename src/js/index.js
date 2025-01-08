@@ -1,3 +1,7 @@
+// Start Settings
+
+localStorage.setItem("processed", "false");
+
 // Libraries
 
 import fslightbox from "fslightbox";
@@ -10,7 +14,7 @@ import $ from "jquery";
 import { appendImg } from "./modules/add_images.js";
 
 $(".files__input").on("change", (event) => {
-    let container = $(".row:last-child .row__items");
+    let container = $(".tier-list__items");
     appendImg(event.target, container);
 });
 
@@ -60,4 +64,12 @@ $(".tier-modal__color-item").click((event) => {
 
 $(".tier-modal__color-input").click((event) => {
     event.stopPropagation();
+});
+
+// Download Tierlist
+
+import { download } from "./modules/download_list.js";
+
+$(".tier-list__download-btn").click(() => {
+    download(document.querySelector(".tier-list__rows"));
 });

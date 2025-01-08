@@ -6,10 +6,13 @@ export function rename(element) {
     let text = element.text().trim();
     let input = $(`<input type="text" placeholder="${text}" class="rename-input">`);
     let maxLength = element.attr("data-length");
+    let wrapWidth = element.parent().width();
 
     element.slideUp(300);
     element.wrap("<div class='rename-wrap'></div>");
     element.before(input);
+
+    if (+element.parent().width() >= wrapWidth - 10) element.parent().css("width", "100%");
 
     input.css({
         width: element.width() + "px",

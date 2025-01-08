@@ -38,7 +38,7 @@ export function mousedown(event, height) {
         move(event.pageX - shiftX, event.pageY - shiftY);
 
         jsElement.hidden = true;
-        let parentElement = document.elementFromPoint(event.pageX, event.pageY)?.closest(".row__items");
+        let parentElement = document.elementFromPoint(event.pageX, event.pageY)?.closest(".row__items, .tier-list__items");
         jsElement.hidden = false;
 
         if (!parentElement) return;
@@ -46,6 +46,10 @@ export function mousedown(event, height) {
         if (currentParrent != parentElement) {
             currentParrent = parentElement;
             $(currentParrent).append(copy);
+
+            if ($(".tier-list__items").children().length === 0) {
+                $(".tier-list__footer").css("border-top", "none");
+            }
         }
     }
 

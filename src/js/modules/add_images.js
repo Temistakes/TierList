@@ -12,14 +12,20 @@ function typeValidation(filename) {
 }
 
 export function appendImg(input, container) {
-    let file = input.files[0];
-    let url, element;
+    let files = input.files;
 
-    if (file && typeValidation(file)) {
-        url = URL.createObjectURL(file);
-        element = $(`<img src='${url}' class='tier-item' alt='' />`);
-        container.append(element);
-        element.on("mousedown", (event) => mousedown(event, element.height()));
-        element.on("dragstart", () => false);
+    if (files) {
+        Array.from(files).forEach(file => {
+            if (typeValidation(file)) {
+                let url = URL.createObjectURL(file);
+                let element = $(`<img src='${url}' class='tier-item' alt='' />`);
+                container.append(element);
+                element.on("mousedown", (event) => mousedown(event, element.height()));
+                element.on("dragstart", () => false);
+                $(".tier-list__footer").css("border-top", "0.0625rem solid #000000");
+            }
+        });
     }
+
+    input.files = null;
 }

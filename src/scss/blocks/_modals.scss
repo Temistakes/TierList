@@ -1,6 +1,11 @@
 .tier-modal {
     width: 100%;
 
+    .iziModal-header-title {
+        font-family: $primaryFont !important;
+        text-transform: uppercase;
+    }
+
     .iziModal-content {
         padding: 1rem !important;
     }

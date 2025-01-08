@@ -1,5 +1,5 @@
 .tier-list {
-    width: 62.5rem;
+    width: 60.1625rem;
     background: $background;
     color: $white;
     text-transform: uppercase;
@@ -28,8 +28,10 @@
     }
 
     &__rows {
-        height: calc($rowHeight * 5 - 0.0625rem);
+        // height: calc($rowHeight * 5 - 0.0625rem);
+        min-height: $rowHeight;
         overflow: auto;
+        background: $background;
     }
     
     &__rows-wrap {
@@ -42,7 +44,7 @@
     }
 
     &__footer {
-        border-top: 0.0625rem solid $black;
+        // border-top: 0.0625rem solid $black;
         width: 100%;
         height: 5rem;
         position: absolute;
@@ -64,5 +66,22 @@
 
     &__files-descr {
         max-width: 10.0625rem;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__download-btn {
+        text-transform: uppercase;
+        padding: 0.5rem 1rem;
+        border: 0.0625rem solid $white;
+
+        &:hover {
+            opacity: 1;
+            background: $white;
+            color: $black;
+        }
     }
 }
