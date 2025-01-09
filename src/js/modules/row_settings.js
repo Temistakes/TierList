@@ -25,7 +25,7 @@ export function setSettings(element) {
         let element = $(event.currentTarget);
         let val = element.val();
         let newRow = `<div class="row">
-                    <div class="row__symbol" style="background: #dde161; box-shadow: 0 0 0.625rem #dde161;">
+                    <div class="row__symbol" style="background: #dde161;">
                         <span class="row__symbol-text rename rename_black" data-length="50">
                             New
                         </span>
