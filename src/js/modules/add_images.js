@@ -1,24 +1,24 @@
 import $ from "jquery";
 
-// Dragn Drop
+// Dragn Drop:
 
-import { mousedown } from "./dragn_drop.js";
+import { mousedown } from "./dragn_drop";
 
 // Methods:
 
 function typeValidation(filename) {
-    let regexp = /\w\.(png|jpg|jpeg|webp|svg|gif)$/;
+    const regexp = /\w\.(png|jpg|jpeg|webp|svg|gif)$/;
     return regexp.test(filename.name);
 }
 
-export function appendImg(input, container) {
-    let files = input.files;
+export default function appendImg(input, container) {
+    const { files } = input;
 
     if (files) {
-        Array.from(files).forEach(file => {
+        Array.from(files).forEach((file) => {
             if (typeValidation(file)) {
-                let url = URL.createObjectURL(file);
-                let element = $(`<img src='${url}' class='tier-item' alt='' />`);
+                const url = URL.createObjectURL(file);
+                const element = $(`<img src='${url}' class='tier-item' alt='' />`);
                 container.append(element);
                 element.on("mousedown", (event) => mousedown(event, element.height()));
                 element.on("dragstart", () => false);
