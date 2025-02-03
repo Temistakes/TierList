@@ -4,27 +4,27 @@ import { rename } from "./rename.js";
 // Methods
 
 export function selectColor(element) {
-    let colors = element.closest(".tier-modal__colors").querySelectorAll(".tier-modal__color-item");
+    const colors = element.closest(".tier-modal__colors").querySelectorAll(".tier-modal__color-item");
 
-    colors.forEach(item => {
+    colors.forEach((item) => {
         if (item === element) {
             $(item).toggleClass("tier-modal__color-item_active");
-        }   else {
+        } else {
             $(item).removeClass("tier-modal__color-item_active");
         }
     });
 }
 
 export function setSettings(element) {
-    let row = element.closest(".row");
-    let symbol = row.find(".row__symbol");
-    let items = row.find(".row__items");
+    const row = element.closest(".row");
+    const symbol = row.find(".row__symbol");
+    const items = row.find(".row__items");
     let color;
 
     function buttonsListener(event) {
-        let element = $(event.currentTarget);
-        let val = element.val();
-        let newRow = `<div class="row">
+        const element = $(event.currentTarget);
+        const val = element.val();
+        const newRow = `<div class="row">
                     <div class="row__symbol" style="background: #dde161;">
                         <span class="row__symbol-text rename rename_black" data-length="50">
                             New
@@ -58,33 +58,33 @@ export function setSettings(element) {
                     </div>
                 </div>`;
         let newElement;
-    
+
         switch (val) {
-            case ("delete"):
-                if ($(".row").length > 1) {
-                    $("#tier-modal").iziModal("close");
-                    row.remove();
-                }   else {
-                    alert("Вы не можете удалить последнюю строчку!");
-                }
+        case ("delete"):
+            if ($(".row").length > 1) {
+                $("#tier-modal").iziModal("close");
+                row.remove();
+            } else {
+                alert("Вы не можете удалить последнюю строчку!");
+            }
             break;
 
-            case ("clear"):
-                items.find(".tier-item").addClass("none");
+        case ("clear"):
+            items.find(".tier-item").addClass("none");
             break;
 
-            case ("before"):
-                newElement = $(newRow);
-                row.after(newElement);
-                newElement.find(".row__settings-btn").click((event) => setSettings($(event.currentTarget)));
-                newElement.find(".rename").click((event) => rename($(event.currentTarget)));
+        case ("before"):
+            newElement = $(newRow);
+            row.after(newElement);
+            newElement.find(".row__settings-btn").click((event) => setSettings($(event.currentTarget)));
+            newElement.find(".rename").click((event) => rename($(event.currentTarget)));
             break;
 
-            case ("after"):
-                newElement = $(newRow);
-                row.before(newElement);
-                newElement.find(".row__settings-btn").click((event) => setSettings($(event.currentTarget)));
-                newElement.find(".rename").click((event) => rename($(event.currentTarget)));
+        case ("after"):
+            newElement = $(newRow);
+            row.before(newElement);
+            newElement.find(".row__settings-btn").click((event) => setSettings($(event.currentTarget)));
+            newElement.find(".rename").click((event) => rename($(event.currentTarget)));
             break;
         }
     }
@@ -97,10 +97,9 @@ export function setSettings(element) {
                 background: color.find("input").val(),
                 boxShadow: `0 0 0.625rem ${color.find("input").val()}`,
             });
-        }   else {
+        } else {
             symbol.css({
                 background: color.find("button").val(),
-                boxShadow: `0 0 0.625rem ${color.find("button").val()}`,
             });
         }
 
