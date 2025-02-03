@@ -3,6 +3,7 @@
 // Libraries
 
 import $ from "jquery";
+import "./modules/modals.js";
 
 // Add Img
 
